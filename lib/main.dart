@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vidflow/screens/dashboard.dart';
 import 'package:vidflow/screens/login.dart';
+import 'package:vidflow/screens/upload.dart';
 
 void main() {
   runApp(const VidFlow());
@@ -18,7 +19,7 @@ class VidFlow extends StatelessWidget {
         brightness: Brightness.dark,
         colorSchemeSeed: Colors.blueAccent,
       ),
-      home: Dashboard(),
+      home: Upload(),
     );
   }
 }
