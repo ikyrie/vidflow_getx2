@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vidflow/screens/dashboard.dart';
 import 'package:vidflow/screens/login.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class VidFlow extends StatelessWidget {
         brightness: Brightness.dark,
         colorSchemeSeed: Colors.blueAccent,
       ),
-      home: Login(),
+      home: Dashboard(),
     );
   }
 }
