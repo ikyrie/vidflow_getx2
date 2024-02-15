@@ -8,4 +8,7 @@ class AppSnacks {
       return Get.showSnackbar(const GetSnackBar(title: "Erro no seu cadastro!", message: "Tente novamente mais tarde", duration: Duration(seconds: 2),));
     }
   }
+  static getErrorLogin() {
+      return Get.showSnackbar(const GetSnackBar(title: "Erro ao realizar o login", message: "Confira seu email e senha e tente novamente", duration: Duration(seconds: 2),));
+  }
 }
