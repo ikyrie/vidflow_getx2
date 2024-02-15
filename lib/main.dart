@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vidflow/screens/dashboard.dart';
+import 'package:get/get.dart';
 import 'package:vidflow/screens/login.dart';
-import 'package:vidflow/screens/register.dart';
-import 'package:vidflow/screens/upload.dart';
 
 void main() {
   runApp(const VidFlow());
@@ -13,14 +11,14 @@ class VidFlow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: "VidFlow",
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
         colorSchemeSeed: Colors.blueAccent,
       ),
-      home: Register(),
+      home: Login(),
     );
   }
 }

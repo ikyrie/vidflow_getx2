@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:vidflow/utils/api_endpoints.dart';
+import 'package:vidflow/utils/snackbars.dart';
 
 class RegistrationController extends GetxController {
   TextEditingController textUserController = TextEditingController();
@@ -24,7 +25,9 @@ class RegistrationController extends GetxController {
       if (response.statusCode == 201) {
         final json = jsonDecode(response.body);
         print(json);
+        AppSnacks.getConfirmRegistration(true);
       } else {
+        AppSnacks.getConfirmRegistration(false);
         throw jsonDecode(response.body);
       }
 

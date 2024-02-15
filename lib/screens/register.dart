@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:vidflow/components/custom_button.dart';
 import 'package:vidflow/components/custom_field.dart';
 import 'package:vidflow/controllers/registration_controller.dart';
+import 'package:vidflow/screens/login.dart';
 import 'package:vidflow/utils/colors.dart';
 import 'package:vidflow/utils/images.dart';
 
@@ -74,7 +75,7 @@ class Register extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 32.0),
                         child: CustomButton(
-                            onTap: registrationController.register, text: "Cadastrar", icon: Icons.login),
+                            onTap: () => {registrationController.register(), Get.offAll(() => Login())}, text: "Cadastrar", icon: Icons.login),
                       ),
                       
                     ],
@@ -82,7 +83,7 @@ class Register extends StatelessWidget {
                   Column(children: <Widget>[
                     const Text("Já possui uma conta?", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => Login()),
                         child: Text(
                           "Faça seu login!",
                           style: TextStyle(

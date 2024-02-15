@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vidflow/components/custom_button.dart';
 import 'package:vidflow/components/custom_field.dart';
+import 'package:vidflow/screens/register.dart';
 import 'package:vidflow/utils/colors.dart';
 import 'package:vidflow/utils/images.dart';
 
@@ -71,7 +73,7 @@ class Login extends StatelessWidget {
                   Column(children: <Widget>[
                     const Text("Ainda não tem conta?", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => Register()),
                         child: Text(
                           "Faça seu cadastro!",
                           style: TextStyle(
