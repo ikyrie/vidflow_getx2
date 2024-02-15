@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vidflow/components/custom_button.dart';
 import 'package:vidflow/components/custom_field.dart';
+import 'package:vidflow/controllers/registration_controller.dart';
 import 'package:vidflow/utils/colors.dart';
 import 'package:vidflow/utils/images.dart';
 
 class Register extends StatelessWidget {
   Register({super.key});
-  final TextEditingController textEmailController = TextEditingController();
-  final TextEditingController textPasswordController = TextEditingController();
-  final TextEditingController textUserController = TextEditingController();
+
+  final RegistrationController registrationController = Get.put(RegistrationController());
 
   @override
   Widget build(BuildContext context) {
@@ -55,17 +56,17 @@ class Register extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 32.0),
                     child: CustomField(
-                        label: "Nome", textController: textUserController),
+                        label: "Nome", textController: registrationController.textUserController),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 32.0),
                     child: CustomField(
-                        label: "Email", textController: textEmailController),
+                        label: "Email", textController: registrationController.textEmailController),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 32.0),
                     child: CustomField(
-                        label: "Senha", textController: textPasswordController),
+                        label: "Senha", textController: registrationController.textPasswordController),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +74,7 @@ class Register extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 32.0),
                         child: CustomButton(
-                            onTap: () {}, text: "Cadastrar", icon: Icons.login),
+                            onTap: registrationController.register, text: "Cadastrar", icon: Icons.login),
                       ),
                       
                     ],

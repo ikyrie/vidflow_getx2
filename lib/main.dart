@@ -20,7 +20,7 @@ class VidFlow extends StatelessWidget {
         brightness: Brightness.dark,
         colorSchemeSeed: Colors.blueAccent,
       ),
-      home: Login(),
+      home: Register(),
     );
   }
 }
