@@ -24,12 +24,11 @@ class LoginController extends GetxController {
       if (response.statusCode == 200) {
         final json = jsonDecode(response.body);
         print(json);
-        Get.to(() => const Dashboard());
+        Get.to(() => Dashboard());
       } else {
         AppSnacks.getErrorLogin();
         throw jsonDecode(response.body);
       }
-
     } catch (e) {
       print(e);
     }

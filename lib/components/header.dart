@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vidflow/components/custom_button.dart';
 import 'package:vidflow/utils/colors.dart';
 import 'package:vidflow/utils/images.dart';
 
 class Header extends StatelessWidget {
-  const Header({super.key});
+  Header({super.key});
 
   @override
   Widget build(BuildContext context) {

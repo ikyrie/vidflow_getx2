@@ -19,7 +19,7 @@ class Upload extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            const Header(),
+            Header(),
             Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
               child: Text("Adicionar vídeo", style: TextStyle(
