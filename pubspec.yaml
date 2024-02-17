@@ -67,6 +67,7 @@ flutter:
   assets:
     - assets/images/login_image.png
     - assets/images/register_image.png
+    - assets/images/profile_image.jpeg
     - assets/images/logo.png
     - assets/images/empty_dashboard.png
 

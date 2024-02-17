@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vidflow/components/custom_button.dart';
 import 'package:vidflow/components/custom_field.dart';
 import 'package:vidflow/components/header.dart';
+import 'package:vidflow/controllers/videos_controller.dart';
 import 'package:vidflow/utils/colors.dart';
 
 class Upload extends StatelessWidget {
   Upload({super.key});
 
-  final TextEditingController textNameController = TextEditingController();
-  final TextEditingController textThumbnailController = TextEditingController();
+  final VideosController videosController = Get.find<VideosController>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,38 +31,15 @@ class Upload extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 16.0),
-              child: CustomField(label: "Nome do vídeo", textController: textNameController),
-            ),
-            Row(
-              children: <Widget>[
-                Container(
-                  width: 272,
-                  height: 153,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    image: const DecorationImage(
-                      image: NetworkImage(
-                          "https://i.ytimg.com/vi/WyCn2dS7vnc/maxresdefault.jpg"),
-                          fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 16.0),
-              child: Text(
-                "Preview",
-                style: TextStyle(fontSize: 12),
-              ),
+              child: CustomField(label: "Nome do vídeo", textController: videosController.textVideoTitleController),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 16.0),
-              child: CustomField(label: "URL do thumbnail", textController: textThumbnailController),
+              child: CustomField(label: "URL do thumbnail", textController: videosController.textVideoThumbNailController),
             ),
             Row(
               children: <Widget>[
-                CustomButton(onTap: (){}, text: "Adicionar vídeo", icon: Icons.login,),
+                CustomButton(onTap: (){videosController.createVideo();}, text: "Adicionar vídeo", icon: Icons.login,),
               ],
             ),
           ],

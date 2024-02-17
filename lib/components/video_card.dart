@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:vidflow/utils/colors.dart';
+import 'package:vidflow/utils/images.dart';
 
 class VideoCard extends StatelessWidget {
-  const VideoCard({super.key, required this.imageURL, required this.profilePictureURL, required this.videoTitle});
+  const VideoCard({super.key, required this.imageURL, required this.videoTitle});
 
   final String imageURL;
-  final String profilePictureURL;
   final String videoTitle;
 
   @override
@@ -36,7 +36,7 @@ class VideoCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(profilePictureURL),
+                  image: AssetImage(AppImages.profilePicture),
                 ),
               ),
             ),

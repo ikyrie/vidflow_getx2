@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vidflow/components/custom_button.dart';
+import 'package:vidflow/screens/upload.dart';
 import 'package:vidflow/utils/colors.dart';
 import 'package:vidflow/utils/images.dart';
 
@@ -22,7 +23,7 @@ class Header extends StatelessWidget {
                 height: 28,
               ),
               CustomButton(
-                onTap: () {},
+                onTap: () {Get.to(() => Upload());},
                 text: "Upload de vídeo",
                 icon: Icons.upload,
               )

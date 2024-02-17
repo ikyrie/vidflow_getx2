@@ -5,6 +5,7 @@ import 'package:vidflow/components/header.dart';
 import 'package:vidflow/components/video_card.dart';
 import 'package:vidflow/controllers/videos_controller.dart';
 import 'package:vidflow/model/video.dart';
+import 'package:vidflow/screens/upload.dart';
 import 'package:vidflow/utils/colors.dart';
 import 'package:vidflow/utils/images.dart';
 
@@ -51,7 +52,7 @@ class _EmptyDashboard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CustomButton(
-                      onTap: () {},
+                      onTap: () {Get.to(() => Upload());},
                       text: "Upload de vídeo",
                       icon: Icons.upload,
                     ),
@@ -95,7 +96,6 @@ class _FullDashboard extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 40.0),
           child: VideoCard(
               imageURL: videosList[index].thumbURL,
-              profilePictureURL: videosList[index].profileURL,
               videoTitle: videosList[index].title),
         ),
       ),

@@ -5,14 +5,12 @@ class Video {
   final int? id;
   final int? userId;
   final String thumbURL;
-  final String profileURL;
   final String title;
 
   Video({
     this.id,
     this.userId,
     required this.thumbURL,
-    required this.profileURL,
     required this.title,
   });
 
@@ -21,7 +19,6 @@ class Video {
       'id': id,
       'userId': userId,
       'thumbURL': thumbURL,
-      'profileURL': profileURL,
       'title': title,
     };
   }
@@ -31,7 +28,6 @@ class Video {
       id: map['id'] != null ? map['id'] as int : null,
       userId: map['userId'] != null ? map['userId'] as int : null,
       thumbURL: map['thumbURL'] as String,
-      profileURL: map['profileURL'] as String,
       title: map['title'] as String,
     );
   }

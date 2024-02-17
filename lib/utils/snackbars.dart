@@ -11,4 +11,12 @@ class AppSnacks {
   static getErrorLogin() {
       return Get.showSnackbar(const GetSnackBar(title: "Erro ao realizar o login", message: "Confira seu email e senha e tente novamente", duration: Duration(seconds: 2),));
   }
+
+  static getSuccessUpload() {
+      return Get.showSnackbar(const GetSnackBar(title: "Upload realizado!", message: "Seu novo vídeo já está em seu canal!", duration: Duration(seconds: 2),));
+  }
+
+  static getErrorUpload() {
+      return Get.showSnackbar(const GetSnackBar(title: "Erro no upload", message: "Verifique as informações e tente novamente", duration: Duration(seconds: 2),));
+  }
 }
