@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vidflow/components/custom_button.dart';
 import 'package:vidflow/components/custom_field.dart';
-import 'package:vidflow/controllers/login_controller.dart';
+import 'package:vidflow/controllers/registration_controller.dart';
 import 'package:vidflow/screens/register.dart';
 import 'package:vidflow/utils/colors.dart';
 import 'package:vidflow/utils/images.dart';
@@ -10,7 +10,7 @@ import 'package:vidflow/utils/images.dart';
 class Login extends StatelessWidget {
   Login({super.key});
 
-  final LoginController loginController = Get.put(LoginController());
+  final RegistrationController registrationController = Get.put(RegistrationController());
 
   @override
   Widget build(BuildContext context) {
@@ -58,19 +58,19 @@ class Login extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 32.0),
                       child: CustomField(
-                          label: "Email", textController: loginController.textEmailController),
+                          label: "Email", textController: registrationController.textEmailController),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 32.0),
                       child: CustomField(
-                          label: "Senha", textController: loginController.textPasswordController),
+                          label: "Senha", textController: registrationController.textPasswordController),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [ Padding(
                         padding: const EdgeInsets.only(bottom: 32.0),
                         child: CustomButton(onTap: () => {
-                          loginController.login(),
+                          registrationController.login(),
                         }, text: "Entrar", icon: Icons.login),
                       ),],
                     ),

@@ -40,7 +40,7 @@ class VideosController extends GetxController {
     try {
       Response<void> response = await videosApi.create(newVideo, session['accessToken']);
       if(response.statusCode == 201) {
-        Get.offAll(() => Dashboard());
+        Get.offAll(() => Dashboard(), transition: Transition.downToUp);
         getAllFromUser();
         AppSnacks.getSuccessUpload();
       } else {
