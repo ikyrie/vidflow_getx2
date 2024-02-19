@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:vidflow/screens/dashboard.dart';
 import 'package:vidflow/utils/api_endpoints.dart';
@@ -24,6 +25,7 @@ class LoginController extends GetxController {
       if (response.statusCode == 200) {
         final json = jsonDecode(response.body);
         print(json);
+        GetStorage().write('session', json);
         Get.to(() => Dashboard());
       } else {
         AppSnacks.getErrorLogin();
