@@ -35,7 +35,6 @@ class VideosController extends GetxController {
   }
 
   Future<void> createVideo() async {
-    var session = GetStorage().read('session');
     Video newVideo = Video(thumbURL: textVideoThumbNailController.text, title: textVideoTitleController.text, userId: session['user']['id']);
     try {
       Response<void> response = await videosApi.create(newVideo, session['accessToken']);

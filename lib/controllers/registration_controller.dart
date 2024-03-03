@@ -58,7 +58,11 @@ class RegistrationController extends GetxController {
         GetStorage().write('session', json);
         Get.to(() => Dashboard());
       } else {
-        AppSnacks.getErrorLogin();
+        Get.defaultDialog(
+          title: "Erro no login",
+          middleText: "Encontramos um problema durante o processo de login, verifique as informações e tente novamente!",
+          cancel: ElevatedButton(onPressed: () => Get.back(), child: Icon(Icons.close)),
+        );
         throw jsonDecode(response.body);
       }
     } catch (e) {
