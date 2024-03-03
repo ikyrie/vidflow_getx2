@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vidflow/components/custom_button.dart';
 import 'package:vidflow/components/custom_field.dart';
-import 'package:vidflow/controllers/registration_controller.dart';
 import 'package:vidflow/screens/register.dart';
 import 'package:vidflow/utils/colors.dart';
 import 'package:vidflow/utils/images.dart';
@@ -10,7 +9,8 @@ import 'package:vidflow/utils/images.dart';
 class Login extends StatelessWidget {
   Login({super.key});
 
-  final RegistrationController registrationController = Get.put(RegistrationController());
+  final TextEditingController textEmailController = TextEditingController();
+  final TextEditingController textPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -58,20 +58,18 @@ class Login extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 32.0),
                       child: CustomField(
-                          label: "Email", textController: registrationController.textEmailController),
+                          label: "Email", textController: textEmailController),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 32.0),
                       child: CustomField(
-                          label: "Senha", textController: registrationController.textPasswordController),
+                          label: "Senha", textController: textPasswordController),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [ Padding(
                         padding: const EdgeInsets.only(bottom: 32.0),
-                        child: CustomButton(onTap: () => {
-                          registrationController.login(),
-                        }, text: "Entrar", icon: Icons.login),
+                        child: CustomButton(onTap: () {}, text: "Entrar", icon: Icons.login),
                       ),],
                     ),
                     Column(children: <Widget>[

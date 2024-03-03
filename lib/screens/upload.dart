@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:vidflow/components/custom_button.dart';
 import 'package:vidflow/components/custom_field.dart';
 import 'package:vidflow/components/header.dart';
-import 'package:vidflow/controllers/videos_controller.dart';
 import 'package:vidflow/utils/colors.dart';
 
 class Upload extends StatelessWidget {
   Upload({super.key});
 
-  final VideosController videosController = Get.find<VideosController>();
+  final TextEditingController textVideoTitleController = TextEditingController();
+  final TextEditingController textVideoThumbNailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,15 +30,15 @@ class Upload extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 16.0),
-              child: CustomField(label: "Nome do vídeo", textController: videosController.textVideoTitleController),
+              child: CustomField(label: "Nome do vídeo", textController: textVideoTitleController),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 16.0),
-              child: CustomField(label: "URL do thumbnail", textController: videosController.textVideoThumbNailController),
+              child: CustomField(label: "URL do thumbnail", textController: textVideoThumbNailController),
             ),
             Row(
               children: <Widget>[
-                CustomButton(onTap: (){videosController.createVideo();}, text: "Adicionar vídeo", icon: Icons.login,),
+                CustomButton(onTap: (){}, text: "Adicionar vídeo", icon: Icons.login,),
               ],
             ),
           ],

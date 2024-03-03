@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:vidflow/screens/login.dart';
 
-void main() async {
-  await GetStorage.init();
+void main() {
   runApp(const VidFlow());
 }
 
